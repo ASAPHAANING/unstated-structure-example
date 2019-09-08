@@ -4,11 +4,15 @@ import './App.css';
 import Button from './components/button';
 import Display from './components/display';
 
+import GlobalState from './context';
+
 const App: React.FC = () => {
 	return (
 		<div className="App">
-			<Button />
-			<Display />
+			<GlobalState>
+				<Button />
+				<Display />
+			</GlobalState>
 		</div>
 	);
 };

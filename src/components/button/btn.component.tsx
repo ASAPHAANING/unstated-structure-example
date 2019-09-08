@@ -1,15 +1,14 @@
 import React from 'react';
 
-import { ButtonContainer, useButtonContainer } from './btn.container';
+import { ButtonContainer } from './btn.container';
 
 const Button = () => {
-	// const useButtonContainer = ButtonContainer.useContainer();
-	const { count, decrement, increment } = useButtonContainer();
+	const useButtonContainer = ButtonContainer.useContainer();
 	return (
 		<div>
-			<button onClick={increment}>+</button>
-			<h1>{count}</h1>
-			<button onClick={decrement}>-</button>
+			<button onClick={useButtonContainer.increment}>+</button>
+			<h1>{useButtonContainer.count}</h1>
+			<button onClick={useButtonContainer.decrement}>-</button>
 		</div>
 	);
 };

@@ -9,11 +9,5 @@ function Container(initialState = 0) {
 }
 
 const ButtonContainer = createContainer(Container);
-// const useButtonContainer = ButtonContainer.useContainer();
 
-const useButtonContainer = () => {
-	const btn_container = ButtonContainer.useContainer();
-	return btn_container;
-};
-
-export { ButtonContainer, useButtonContainer };
+export { ButtonContainer };
