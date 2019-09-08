@@ -1,14 +1,19 @@
-import React from 'react';
+import * as React from 'react';
 
 import { ButtonContainer } from './btn.container';
 
-const Button = () => {
-	const useButtonContainer = ButtonContainer.useContainer();
+interface IButtonProps {
+	increment: () => void;
+	decrement: () => void;
+	count: number;
+}
+
+const Button: React.SFC<IButtonProps> = ({ increment, decrement, count }) => {
 	return (
 		<div>
-			<button onClick={useButtonContainer.increment}>+</button>
-			<h1>{useButtonContainer.count}</h1>
-			<button onClick={useButtonContainer.decrement}>-</button>
+			<button onClick={increment}>+</button>
+			<h1>{count}</h1>
+			<button onClick={decrement}>-</button>
 		</div>
 	);
 };
